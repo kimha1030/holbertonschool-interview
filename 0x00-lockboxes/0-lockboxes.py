@@ -36,7 +36,7 @@ def canUnlockAll(boxes):
         for i in boxes[num]:
             # Si i no esta en list_numbers, lo agrego en esta lista
             if i not in list_numbers:
-                list_numbers.append(k)
+                list_numbers.append(i)
 
     # Si encuentro un cero en list_unlocked, es decir,
     # que una caja esta cerrado, retorno False.
