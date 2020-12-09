@@ -2,12 +2,14 @@
 
 
 def canUnlockAll(boxes):
-    """[Method that determines if all the boxes can be opened]
+    """
+    Method that determines if all the boxes can be opened.
+
     Args:
-        boxes ([list]): [list of list that contains all the boxes and its keys]
+        boxes (list): list of list that contains all the boxes and its keys
     Returns:
-        [True]: [If all the boxes can be opened]
-        [False]: [If all the boxes can not be opened]
+        True: If all the boxes can be opened
+        False: If all the boxes can not be opened
     """
     list_unlocked = []
     list_numbers = []
@@ -31,13 +33,13 @@ def canUnlockAll(boxes):
             list_unlocked[num] = 1
 
         # Recorro la lista boxes em la posicion de num
-        for k in boxes[num]:
-            # Si k no esta en list_numbers, lo agrego en esta lista
-            if k not in list_numbers:
+        for i in boxes[num]:
+            # Si i no esta en list_numbers, lo agrego en esta lista
+            if i not in list_numbers:
                 list_numbers.append(k)
 
     # Si encuentro un cero en list_unlocked, es decir,
-    # que una caja esta cerrado, retorno falso.
+    # que una caja esta cerrado, retorno False.
     # Si todas las cajas esta abiertas, retorno True
     if 0 in list_unlocked:
         return False
