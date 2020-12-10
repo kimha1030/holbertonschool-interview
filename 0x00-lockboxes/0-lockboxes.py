@@ -22,21 +22,20 @@ def canUnlockAll(boxes):
     list_unlocked[0] = 1
 
     # Recorro la 1er caja y agrego las llaves a la lista
-    for j in boxes[0]:
-        list_numbers.append(j)
+    for num in boxes[0]:
+        list_numbers.append(num)
 
     for num in list_numbers:
         # Si el num es menor que el no# de cajas
         # y el valor es cero en la posicion de num en list_unlocked
         # se cambia a valor 1, indicando que la caja esta abierta
-        if (num < len(boxes)) and (list_unlocked[num] == 0):
+        if ((num < len(boxes)) and (list_unlocked[num] == 0)):
             list_unlocked[num] = 1
-
-        # Recorro la lista boxes em la posicion de num
-        for i in boxes[num]:
-            # Si i no esta en list_numbers, lo agrego en esta lista
-            if i not in list_numbers:
-                list_numbers.append(i)
+            # Recorro la lista boxes em la posicion de num
+            for j in boxes[num]:
+                # Si j no esta en list_numbers, lo agrego en esta lista
+                if j not in list_numbers:
+                    list_numbers.append(j)
 
     # Si encuentro un cero en list_unlocked, es decir,
     # que una caja esta cerrado, retorno False.
