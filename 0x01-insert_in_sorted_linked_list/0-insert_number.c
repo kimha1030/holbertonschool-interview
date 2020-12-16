@@ -34,14 +34,9 @@ listint_t *insert_node(listint_t **head, int number)
 	* the next node is less than the value of the new node, then the
 	* the new node is join in the linked list in the right order.
 	*/
-	while (current->next != NULL)
+	while (current->next != NULL && current->next->n < new->n)
 	{
-		if (current->next->n < new->n)
-			current = current->next;
-		else
-		{
-			break;
-		}
+		current = current->next;
 	}
 	new->next = current->next;
 	current->next = new;
