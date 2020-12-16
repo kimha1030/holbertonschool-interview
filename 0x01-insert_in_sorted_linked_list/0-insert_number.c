@@ -20,20 +20,26 @@ listint_t *insert_node(listint_t **head, int number)
 	/*
 	 * The data of the new node is number and it
 	 * points to NULL
-	*/
+	 */
 	new->n = number;
 	new->next = NULL;
 	/*
 	 * In case there are no nodes, the head node
 	 * would be the new node
-	*/
+	 */
 	if (*head == NULL)
 		*head = new;
+	if ((*head)->n > newNode->n)
+	{
+		newNode->next = *head;
+		*head = newNode;
+		return (newNode);
+	}
 	/*
-	* The loop ends when the next node is null and if the value of
-	* the next node is less than the value of the new node, then the
-	* the new node is join in the linked list in the right order.
-	*/
+	 * The loop ends when the next node is null and if the value of
+	 * the next node is less than the value of the new node, then the
+	 * the new node is join in the linked list in the right order.
+	 */
 	while (current->next != NULL && current->next->n < new->n)
 	{
 		current = current->next;
