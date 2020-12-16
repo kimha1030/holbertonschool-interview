@@ -18,12 +18,14 @@ listint_t *insert_node(listint_t **head, int number)
 	if (new == NULL)
 		return (NULL);
 	/*
-	 * The data of the new node is number and points to NULL
+	 * The data of the new node is number and it
+	 * points to NULL
 	*/
 	new->n = number;
 	new->next = NULL;
 	/*
-	 * In case there are no nodes, the head node would be the new node
+	 * In case there are no nodes, the head node
+	 * would be the new node
 	*/
 	if (*head == NULL)
 		*head = new;
@@ -32,7 +34,7 @@ listint_t *insert_node(listint_t **head, int number)
 	* the next node is less than the value of the new node, then the
 	* the new node is join in the linked list in the right order.
 	*/
-	while (current->next != NULL && current->next->n < new->n)
+	while (current->next != NULL)
 	{
 		if (current->next->n < new->n)
 			current = current->next;
