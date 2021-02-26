@@ -69,7 +69,7 @@ void left(int *line, size_t size)
 void right(int *line, size_t size)
 {
 	size_t q = 0, j;
-	int aux[size], p, i, k;
+	int aux[32], p, i, k;
 
 	for (j = 0; j < size; j++){
 		aux[j] = 0;
