@@ -9,11 +9,10 @@
  */
 int printSymbol(int x, int y)
 {
-	while(x && y)
+	while (x && y)
 	{
-		if (x % 3 == 1 && y % 3 == 1) {
+		if (x % 3 == 1 && y % 3 == 1)
 			return (0);
-		}
 		x = x / 3;
 		y = y / 3;
 	}
@@ -30,16 +29,19 @@ void menger(int level)
 	int x, y, size;
 
 	size = pow(3, level);
-	for (x = 0; x < size; x++)
+	if (level >= 0)
 	{
-		for (y = 0; y < size; y++)
+		for (x = 0; x < size; x++)
 		{
-			if (printSymbol(x, y))
-				printf("#");
-			else
-				printf(" ");
+			for (y = 0; y < size; y++)
+			{
+				if (printSymbol(x, y))
+					printf("#");
+				else
+					printf(" ");
 
+			}
+			printf("\n");
 		}
-		printf("\n");
 	}
 }
