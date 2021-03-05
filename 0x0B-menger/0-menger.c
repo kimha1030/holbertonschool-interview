@@ -9,7 +9,7 @@
  */
 int printSymbol(int x, int y)
 {
-	while(x)
+	while(x && y)
 	{
 		if (x % 3 == 1 && y % 3 == 1) {
 			return (0);
