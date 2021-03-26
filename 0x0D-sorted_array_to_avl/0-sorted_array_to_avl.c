@@ -8,11 +8,12 @@
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
+	avl_t *h = NULL;
+	avl_t *tree = NULL;
+
 	if (array == NULL)
 		return (NULL);
-	int size_int = (int)size;
-	avl_t *h = NULL;
-	avl_t *tree = create_tree(array, 0, size_int - 1, &h);
+	tree = create_tree(array, 0, (int)size - 1, &h);
 
 	if (tree == NULL)
 		return (NULL);
@@ -31,25 +32,26 @@ avl_t *create_tree(int *array, int value_a, int value_b, avl_t **h)
 {
 	avl_t *left = NULL;
 	avl_t *right = NULL;
+	avl_t *node = NULL;
+	int media_value;
 
 	if (value_a > value_b)
 		return (NULL);
-	int media_value = (value_a + value_b) / 2;
-
-	create_tree(array, value_a, media_value - 1, &left);
+	media_value = (value_a + value_b) / 2;
 	create_tree(array, media_value + 1, value_b, &right);
-	avl_t *node = malloc(sizeof(avl_t));
+	create_tree(array, value_a, media_value - 1, &left);
+	node = malloc(sizeof(avl_t));
 
 	if (node == NULL)
 		return (NULL);
 	node->n = array[media_value];
 	node->parent = NULL;
-	node->left = left;
 	node->right = right;
-	if (left != NULL)
-		left->parent = node;
+	node->left = left;
 	if (right != NULL)
 		right->parent = node;
+	if (left != NULL)
+		left->parent = node;
 	*h = node;
 	return (node);
 }
