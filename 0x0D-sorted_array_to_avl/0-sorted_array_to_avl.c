@@ -36,20 +36,20 @@ avl_t *create_tree(int *array, int value_a, int value_b, avl_t **h)
 		return (NULL);
 	int media_value = (value_a + value_b) / 2;
 
-	create_tree(array, media_value + 1, value_b, &right);
 	create_tree(array, value_a, media_value - 1, &left);
+	create_tree(array, media_value + 1, value_b, &right);
 	avl_t *node = malloc(sizeof(avl_t));
 
 	if (node == NULL)
 		return (NULL);
 	node->n = array[media_value];
 	node->parent = NULL;
-	node->right = right;
 	node->left = left;
-	if (right != NULL)
-		right->parent = node;
+	node->right = right;
 	if (left != NULL)
 		left->parent = node;
+	if (right != NULL)
+		right->parent = node;
 	*h = node;
 	return (node);
 }
