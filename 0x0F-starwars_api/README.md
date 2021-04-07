@@ -3,6 +3,8 @@
 ## Resources
 
 - [How to make HTTP Requests using Node.js Request Module](https://attacomsian.com/blog/node-http-requests-using-request-module)
+- [Easy requests in Node js](https://dev.to/nulldreams/easy-requests-in-nodejs-1fke)
+- [Async / Await](https://javascript.info/async-await)
 
 ## Requirements
 
