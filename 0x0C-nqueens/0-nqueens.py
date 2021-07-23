@@ -15,6 +15,7 @@ def res_nq(num, val_r, list_sol):
                 res_nq(num, val_r + 1, list_sol)
                 list_sol.remove(pos)
 
+
 def check_pos(pos, list_sol):
     for ele in list_sol:
         con1 = ele[1] == pos[1]
