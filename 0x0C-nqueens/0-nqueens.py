@@ -34,7 +34,7 @@ if __name__ == "__main__":
         print("N must be a number\n")
         exit(1)
     if num < 4:
-        print("N must be at least 4.\n")
+        print("N must be at least 4\n")
         exit(1)
     list_sol = []
     res_nq(num, 0, list_sol)
