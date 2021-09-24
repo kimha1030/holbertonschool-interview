@@ -86,7 +86,7 @@ char *mult(char *a, char *b, int l1, int l2)
 		val[x] = '0';
 	}
 	end1 = l1 - 1;
-	for (x = end1; x >= 0; x-- )
+	for (x = end1; x >= 0; x--)
 	{
 		flag = 0;
 		end2 =  l2 - 1;
